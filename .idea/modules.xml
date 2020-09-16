@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CH01_Java_Fundamentals/CH01_Java_Fundamentals.iml" filepath="$PROJECT_DIR$/CH01_Java_Fundamentals/CH01_Java_Fundamentals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OCPJP11_BOOK.iml" filepath="$PROJECT_DIR$/OCPJP11_BOOK.iml" />
+    </modules>
+  </component>
+</project>
