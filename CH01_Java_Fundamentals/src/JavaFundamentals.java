@@ -1,6 +1,6 @@
 import com.ocpjp11.Testeable;
 
-import static java.lang.Math.*;
+import static java.lang.Math.random;
 
 public class JavaFundamentals implements Testeable {
 
@@ -19,8 +19,8 @@ public class JavaFundamentals implements Testeable {
     public final void test(){
 
         // It must be assigned a value before it can be used WHEN LOCAL
-
         final int LOCAL_CONST;
+
         int number = (int)(random() *100);
         if (number == 3) LOCAL_CONST = 5;
         else
@@ -50,34 +50,109 @@ public class JavaFundamentals implements Testeable {
 
         // USING ENUMS WITH SWITCH STATEMENTS
 
-        switch (s1){
+        switch (s1) {
             case SUMMER:
                 System.out.println("IT IS SUMMER");
                 break;
 //            case Season.SPRING: // DOES NOT COMPILE
 //            case 0: // DOES NOT COMPILE
-                case ALL:
+            case ALL:
                 System.out.print("It is ALL ");
         }
 
+        // Instantiating inner classes
+        MyFinalNestedClass mfn = new JavaFundamentals().new MyFinalNestedClass();
+        MyStaticInnerHelper dummy = new JavaFundamentals.MyStaticInnerHelper();
     }
 
     // CREATE AND USE FINAL CLASSES
     // Mark class as final avoid this to be extended by subclasses.
-    final class MyFinalClass {
-
-    }
-
-    // WORKING WITH ENUMS
-    enum Season{
-        WINTER, SPRING, SUMMER, ALL
-    }
 
     // CONSTRUCTORS, FIELDS AND METHODS INSIDE ENUMS
     enum ZOO {
-        ZOO(){
+        // LIST OF VALUES MUST GO FIRST
+        ELEPHANT("0") {
+            @Override
+            public int getSleepHour() {
+                return 0;
+            }
+        }, HORSE("2") {
+            @Override
+            public int getSleepHour() {
+                return 2;
+            }
+        }; // semicolon is MUST when adding constructor, fields or any other enum member
 
+        public static String mRanking2 = "AA";
+        private final String mRanking; // Good practice but NOT mandatory to mark properties final
+
+        ZOO(String ranking) { // Public or protected are invalid modifiers
+            this.mRanking = ranking;
+        }
+
+        public static String getRanking() {
+            return mRanking2;
+        }
+
+        // All enums must implement this
+        public abstract int getSleepHour();
+
+        public static class Dummy {
         }
     }
+
+    // WORKING WITH ENUMS
+    enum Season {
+        WINTER, SPRING, SUMMER, ALL
+    }
+
+    // 2- STATIC NESTED CLASS
+    public static class MyStaticInnerHelper {
+        void abstractMethod() {
+        }
+    }
+
+    // 1- INNER CLASS
+    // VALID: abstract and all modifiers
+    // They can access outer class including private members
+    private final class MyFinalNestedClass {
+        void nestedClasses() {
+
+            int OuterField = CONSTANT;
+            // 3- ANONYMOUS CLASS
+            Runnable rn = () -> {
+                // parent outer member
+                int constant2 = CONSTANT2;
+            };
+
+            // Interfaces
+
+            // Calling enum methods
+            String ranking = ZOO.getRanking();
+
+            ZOO zoo = ZOO.HORSE;
+            ZOO.getRanking();
+
+            // would make variable not effectively final, so cant be used within local class
+
+//            ranking = "aa";
+            // 4- LOCAL CLASS
+            // NOT ALLOWED ACCESS MODIFIERS
+            // NOT ALLOWED STATIC
+            class LOCAL {
+                static final int AA = 4;
+
+                void test() {
+                    // effectively final
+                    ranking.startsWith("aa");
+                }
+            }
+
+            // LOCAL INTERFACES OR ENUMS ARE NOT ALLOWED
+//            interface myInterfaceLocal {}
+        }
+
+    }
+
 
 }
