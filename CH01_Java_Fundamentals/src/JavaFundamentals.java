@@ -7,6 +7,7 @@ public class JavaFundamentals implements Testeable {
     final int CONSTANT = 1;
     final int CONSTANT2;
     final static int STATIC_CONSTANT;
+    static final int b = 2;
 
     static {
         STATIC_CONSTANT = 4;
@@ -41,11 +42,11 @@ public class JavaFundamentals implements Testeable {
             System.out.println("Name of Season> " + season.name() + " ordinal number> "+ season.ordinal());
         }
 
-        // Invalid compare enum with primitive types
+//        Invalid compare enum with primitive types
 //        if (Season.SUMMER == 2)
 
         // Enum value MUST MATCH EXACTLY
-        Season s1 =  Season.valueOf("SUMMER"); // OK
+        Season s1 =  Season.valueOf("SUMMER");  // OK
 //        Season s2 = Season.valueOf("summer"); // NOT OK, RUNTIME EXCEPTION, ILLEGAL ARGUMENT EXCEPTION
 
         // USING ENUMS WITH SWITCH STATEMENTS
@@ -106,9 +107,14 @@ public class JavaFundamentals implements Testeable {
         WINTER, SPRING, SUMMER, ALL
     }
 
-    // 2- STATIC NESTED CLASS
-    public static class MyStaticInnerHelper {
+    // 2- STATIC NESTED CLASS                          Nested and inner classes can extend or implement interfaces
+    public static class MyStaticInnerHelper implements Testeable {
         void abstractMethod() {
+        }
+
+        @Override
+        public void test() {
+
         }
     }
 
@@ -116,7 +122,18 @@ public class JavaFundamentals implements Testeable {
     // VALID: abstract and all modifiers
     // They can access outer class including private members
     private final class MyFinalNestedClass {
+
+
         void nestedClasses() {
+            final int instanceVariableOuter;
+
+            instanceVariableOuter = 2;
+
+            abstract class instanceInitializerClass {
+                void doSomething (){
+                    int result = instanceVariableOuter + 1;
+                }
+            }
 
             int OuterField = CONSTANT;
             // 3- ANONYMOUS CLASS

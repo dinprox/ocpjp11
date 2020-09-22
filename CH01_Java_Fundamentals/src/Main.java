@@ -1,3 +1,4 @@
+import com.ocpjp11.FunctionalInterfaces;
 import com.ocpjp11.Testeable;
 
 public class Main {
@@ -9,8 +10,8 @@ public class Main {
     static Testeable mTest;
 
     public static void main(String[] args) {
-        mTest = new JavaFundamentals();
-//        mTest = new JavaFundamentals();
-        mTest.test();
+//       new JavaFundamentals().test();
+//       new JavaInterfaces().test();
+//       new FunctionalInterfaces().test();
     }
 }
