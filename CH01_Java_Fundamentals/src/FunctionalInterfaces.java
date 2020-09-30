@@ -1,5 +1,3 @@
-package com.ocpjp11;
-
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -35,6 +33,10 @@ class Animal {
         this.canDive = canDive;
     }
 
+    public Animal() {
+
+    }
+
     public boolean isCanSwim() {
         return canSwim;
     }
@@ -45,6 +47,10 @@ class Animal {
 
     public boolean isCanDive() {
         return canDive;
+    }
+
+    public boolean isOdd(int number) {
+        return number % 2 ==0;
     }
 
     public final class InnerAnimal {

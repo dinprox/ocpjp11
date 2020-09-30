@@ -1,5 +1,3 @@
-import com.ocpjp11.Testeable;
-
 public class JavaInterfaces extends AbstractClass implements Testeable, MyInterface {
 
     @Override

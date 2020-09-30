@@ -1,5 +1,3 @@
-import com.ocpjp11.Testeable;
-
 import static java.lang.Math.random;
 
 public class JavaFundamentals implements Testeable {

@@ -6,8 +6,9 @@ public class Main {
         4- Declare customs annotations
      */
     public static void main(String[] args) {
-        @Exercise(hoursPerDay = 4)
-                int var = 4;
+        Veterinarian veterinarian = new Veterinarian();
+        BuiltInAnnotations builtInAnnotations = new BuiltInAnnotations();
+        builtInAnnotations.voidMethod(5);
     }
 
 }

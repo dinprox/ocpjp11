@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CH01_Java_Fundamentals/CH01_Java_Fundamentals.iml" filepath="$PROJECT_DIR$/CH01_Java_Fundamentals/CH01_Java_Fundamentals.iml" />
       <module fileurl="file://$PROJECT_DIR$/CH02_Annotations/CH02_Annotations.iml" filepath="$PROJECT_DIR$/CH02_Annotations/CH02_Annotations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CH03_GenericsAndCollections/CH03_GenericsAndCollections.iml" filepath="$PROJECT_DIR$/CH03_GenericsAndCollections/CH03_GenericsAndCollections.iml" />
       <module fileurl="file://$PROJECT_DIR$/OCPJP11_BOOK.iml" filepath="$PROJECT_DIR$/OCPJP11_BOOK.iml" />
     </modules>
   </component>

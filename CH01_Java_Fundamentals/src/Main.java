@@ -1,6 +1,3 @@
-import com.ocpjp11.FunctionalInterfaces;
-import com.ocpjp11.Testeable;
-
 public class Main {
     /* OBJECTIVES COVERED IN THIS MODULE
     1.1 JAVA FUNDAMENTALS
